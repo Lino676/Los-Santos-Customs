@@ -157,21 +157,21 @@ button {
 #whatsapp {
     font-size: 60px;
     color: #fdfdfd;
+    border-radius: 10px;
+    padding: 20px;
 }
 #whatsapp:hover {
     background-color:#25D366;
     color: #fdfdfd;
-    border-radius: 10px;
-    padding: 20px;
 }
 #instagram {
     font-size: 60px;
     color: #fdfdfd;
+    border-radius: 10px;
+    padding: 20px
 }
 #instagram:hover {
     background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-    border-radius: 10px;
-    padding: 20px
 }
 #final {
     text-align: center;
@@ -209,6 +209,15 @@ button {
 }
 }
 @media (max-width: 480px) {
+    .imgcarros {
+    display: block;
+    align-items: center;
+    text-align: center;
+}
+.imgcarros p {
+    font-size: 30px;
+    margin-top: -150px;
+}
     #servicos ul {
         background: linear-gradient(-135deg, #333333, gray, #d3d3d3);
         box-shadow: 5px 3px 100px rgba(255, 255, 255, 0.3);
