@@ -1,0 +1,168 @@
+body {
+    background-color: black;
+    color: #fdfdfd;
+}
+h2, h3, h4 {
+    font-family: 'Anton', sans-serif;
+}
+p {
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.6);
+    margin: 20px 20px 20px 20px;
+}
+header {
+    background: url(imagens/logo\ Los\ Santos\ Customs.webp) no-repeat center;
+    height: 100vh;
+}
+#introducao {
+    text-align: center;
+}
+#introducao h2 {
+    font-size: 45px;
+}
+#nosso-mecanico {
+    text-align: center;
+}
+#nosso-mecanico h3 {
+    font-size: 45px;
+}
+#nosso-mecanico h4 {
+    font-size: 30px;
+}
+#mecanico {
+    width: 100%;
+    max-width: 350px;
+    height: 530px;
+    border: solid 1px gray;
+    border-radius: 10px;
+    box-shadow: 5px 3px 100px rgba(255, 255, 255, 0.3);
+    margin: 20px auto 20px auto;
+}
+#oficina {
+    text-align: center;
+}
+#oficina h3 {
+    font-size: 45px;
+}
+#interior {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+}
+#interior img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+#servicos h3 {
+    text-align: center;
+    font-size: 45px;
+}
+#servicos ul {
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    flex-direction: column;
+    margin: 0 auto;
+    border-radius: 10px;
+    background: gray;
+    box-shadow: 5px 3px 100px rgba(255, 255, 255, 0.3);
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    animation: balancar 3s ease-in-out infinite;
+    color: black;
+    text-shadow: 2px 5px 10px white
+}
+#servicos ul li {
+    font-size: 25px;
+    margin: 5px 0;
+}
+@keyframes balancar {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+#tunagens {
+    text-align: center;
+}
+#tunagens h3 {
+    font-size: 45px;
+}
+#carros {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 20px;
+}
+#carros img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+@media (max-width: 768px) {
+    #servicos ul {
+        background: linear-gradient(-135deg, #333333, gray, #d3d3d3);
+        box-shadow: 5px 3px 100px rgba(255, 255, 255, 0.3);
+        padding: 40px;
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+    }
+    #servicos ul li {
+        font-size: 25px;
+        margin: 5px 0;
+        padding: 10px;
+        border-radius: 20px;
+    }
+    #interior {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        gap: 20px;
+    }
+    #carros {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 20px;
+}
+}
+@media (max-width: 480px) {
+    #servicos ul {
+        background: linear-gradient(-135deg, #333333, gray, #d3d3d3);
+        box-shadow: 5px 3px 100px rgba(255, 255, 255, 0.3);
+        padding: 40px;
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+    #servicos ul li {
+        font-size: 25px;
+        margin: 5px 0;
+        padding: 10px;
+        border-radius: 20px;
+    }
+    #interior {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        gap: 20px;
+    }
+    #carros {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 20px;
+}
+}
