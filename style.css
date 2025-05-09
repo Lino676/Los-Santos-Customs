@@ -4,6 +4,7 @@ body {
 }
 h2, h3, h4 {
     font-family: 'Anton', sans-serif;
+    text-shadow: 3px 3px 3px white
 }
 p {
     font-size: 25px;
@@ -36,7 +37,7 @@ header {
     height: 530px;
     border: solid 1px gray;
     border-radius: 10px;
-    box-shadow: 5px 3px 100px rgba(255, 255, 255, 0.3);
+    box-shadow: 5px 3px 100px #1D3C78;
     margin: 20px auto 20px auto;
 }
 #oficina {
@@ -68,7 +69,7 @@ header {
     margin: 0 auto;
     border-radius: 10px;
     background: #1D3C78;
-    box-shadow: 5px 3px 100px rgba(255, 255, 255, 0.3);
+    box-shadow: 5px 3px 100px #1D3C78;
     padding: 40px;
     width: 100%;
     max-width: 400px;
@@ -102,9 +103,9 @@ header {
 #galeria {
     border: solid 2px white;
     border-radius: 20px;
-    box-shadow: 5px 3px 100px rgba(255, 255, 255, 0.3);
+    box-shadow: 5px 3px 100px #1D3C78;
     color: white;
-    background-color: #333333;
+    background-color: #1D3C78;
     margin-bottom: 50px;
     width: 100%;
     max-width: 200px;
@@ -112,27 +113,54 @@ header {
     font-size: 20px;
     animation: balancar 3s ease-in-out infinite;
 }
-.imgcarros {
-    display: block;
-    align-items: center;
-    text-align: center;
+.carros-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    
 }
-.imgcarros p {
-    font-size: 40px;
-    margin-top: -435px;
+#carros.ativo {
+    height: 600px;
 }
 #carros {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    gap: 10px;
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+.imgcarros {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+.imgcarros p {
+    font-size: 50px;
 }
 #carros img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border: solid 2px gray;
-    border-radius: 10px;
+    max-width: 500px;
+    height: auto;
+    object-fit: contain;
+    border: solid 3px #1D3C78;
+    border-radius: 20px;
+    box-shadow: 8px 3px 20px #1D3C78;
+}
+#proximo, #anterior {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 60px;
+    color: #1D3C78;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+}
+#anterior {
+    left: -100px;
+}
+
+#proximo {
+    right: -100px;
 }
 footer {
     background: url(imagens/Icone\ Los\ Santos\ Customs.webp) no-repeat center;
@@ -142,12 +170,14 @@ footer {
     justify-content: center;
     align-items: center;
     gap: 100px;
+    z-index: -1;
 }
 #contato {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 200px;
+    z-index: 10;
 }
 button {
     cursor: pointer;
@@ -181,8 +211,10 @@ button {
     font-size: 45px;
 }
 @media (max-width: 768px) {
+    header {
+        background: url(imagens/Icone\ Los\ Santos\ Customs.webp) no-repeat center;
+    }
     #servicos ul {
-        background: linear-gradient(-135deg, #333333, gray, #d3d3d3);
         box-shadow: 5px 3px 100px rgba(255, 255, 255, 0.3);
         padding: 40px;
         width: 100%;
@@ -201,12 +233,21 @@ button {
         grid-template-rows: repeat(1, 1fr);
         gap: 20px;
     }
-    #carros {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        gap: 20px;
-}
+    #carros img {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+    }
+    #carros.ativo {
+        height: 450px;
+    }
+    #anterior {
+        left: -10px;
+    }
+
+    #proximo {
+        right: -10px;
+    }
 }
 @media (max-width: 480px) {
     .imgcarros {
@@ -219,7 +260,6 @@ button {
     margin-top: -150px;
 }
     #servicos ul {
-        background: linear-gradient(-135deg, #333333, gray, #d3d3d3);
         box-shadow: 5px 3px 100px rgba(255, 255, 255, 0.3);
         padding: 40px;
         width: 100%;
@@ -238,10 +278,19 @@ button {
         grid-template-rows: repeat(1, 1fr);
         gap: 20px;
     }
-    #carros {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        gap: 20px;
-}
+    #carros img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+    #carros.ativo {
+        height: 400px;
+    }
+    #anterior {
+        left: -10px;
+    }
+
+    #proximo {
+        right: -10px;
+    }
 }
