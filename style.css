@@ -171,6 +171,7 @@ footer {
     align-items: center;
     gap: 100px;
     z-index: -1;
+    border-radius: 20px;
 }
 #contato {
     display: flex;
